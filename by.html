@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upanshu Sharma | Systems & AI Product Developer</title>
+
+<style>
+:root{
+--primary:#00f7ff;
+--bg:#020202;
+--card:#0d0d0d;
+--text:#ffffff;
+--sub:#a0a0a0;
+--accent:#1a1a1a;
+--glass: rgba(255, 255, 255, 0.03);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter','Segoe UI',sans-serif;}
+body{
+background-color: var(--bg);
+background-image: 
+    radial-gradient(circle at 10% 20%, #00f7ff08, transparent),
+    radial-gradient(circle at 90% 80%, #00f7ff05, transparent);
+color:var(--text);
+overflow-x:hidden;
+scroll-behavior:smooth;
+line-height: 1.6;
+}
+
+/* NAV */
+nav{
+position:fixed;width:100%;padding:20px 8%;
+display:flex;justify-content:space-between;align-items: center;
+background:rgba(2,2,2,0.8);
+backdrop-filter:blur(15px);
+z-index:1000;
+border-bottom: 1px solid #111;
+}
+nav h1{font-size: 1.2rem; font-weight: 800; letter-spacing: 1px; color: var(--primary);}
+nav ul{display:flex;gap:30px;list-style:none;}
+nav a{color:white;text-decoration:none;font-size: 0.85rem; font-weight: 500; opacity: 0.7; transition: 0.3s;}
+nav a:hover{opacity: 1; color:var(--primary);}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 10%;
+}
+.hero h1{font-size:clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; font-weight: 900;}
+.hero span{background: linear-gradient(90deg, #00f7ff, #0088ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+.hero p{color:var(--sub); max-width:800px; font-size: 1.2rem;}
+
+/* SECTIONS */
+section{
+padding:80px 8%;
+max-width: 1400px;
+margin: 0 auto;
+opacity:0;
+transform:translateY(30px);
+transition: 1s ease-out;
+}
+section.show{opacity:1; transform:translateY(0);}
+
+h2{font-size: 2.5rem; margin-bottom: 15px;}
+.section-desc{color: var(--sub); margin-bottom: 50px; font-size: 1.1rem;}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+}
+
+/* APP CARDS */
+.card{
+background: var(--card);
+padding: 30px;
+border-radius: 20px;
+border: 1px solid #1a1a1a;
+position: relative;
+transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+display: flex;
+flex-direction: column;
+}
+.card:hover{
+background: #111;
+border-color: var(--primary);
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0, 247, 255, 0.05);
+}
+
+.tag{
+background: #00f7ff10;
+color: var(--primary);
+padding: 3px 10px;
+border-radius: 4px;
+font-size: 0.7rem;
+font-weight: 700;
+display: inline-block;
+margin-bottom: 15px;
+width: fit-content;
+text-transform: uppercase;
+}
+
+.card h3{font-size: 1.4rem; margin-bottom: 10px;}
+.card p{font-size: 0.9rem; color: var(--sub); flex-grow: 1;}
+
+.card ul{list-style: none; margin-top: 15px; border-top: 1px solid #222; padding-top: 15px;}
+.card li{
+color: #888;
+font-size: 0.85rem;
+margin-bottom: 5px;
+display: flex;
+align-items: center;
+}
+.card li::before{
+content: '●';
+color: var(--primary);
+font-size: 0.5rem;
+margin-right: 8px;
+}
+
+/* STATS */
+.stats-bar{
+display: flex;
+gap: 50px;
+margin-top: 40px;
+flex-wrap: wrap;
+}
+.stat-item b{color: var(--primary); font-size: 1.5rem; display: block;}
+.stat-item span{color: var(--sub); font-size: 0.8rem; text-transform: uppercase;}
+
+/* STATUS FOOTER */
+.status-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 30px;
+    padding: 20px;
+    background: #050505;
+    border-radius: 12px;
+}
+.status-item{ font-size: 0.75rem; color: #555; display: flex; align-items: center; gap: 8px;}
+.dot{ width: 8px; height: 8px; background: #00ff62; border-radius: 50%; box-shadow: 0 0 5px #00ff62;}
+
+footer{padding: 60px 8%; background: #050505; text-align: center; border-top: 1px solid #111;}
+
+@media (max-width: 768px) {
+    .grid{grid-template-columns: 1fr;}
+    .hero h1{font-size: 2.8rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <h1>UPANSHU<span>.ARCH</span></h1>
+    <ul>
+        <li><a href="#projects">Systems</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <h1>Systems <span>Engineer</span> & AI Architect</h1>
+    <p>Developing high-performance automation, secure backends, and intelligent user interfaces.</p>
+    <div class="stats-bar">
+        <div class="stat-item"><b>24+</b><span>Modules Deployed</span></div>
+        <div class="stat-item"><b>AI-DS</b><span>RGPV Engineering</span></div>
+        <div class="stat-item"><b>100%</b><span>Code Ownership</span></div>
+    </div>
+</div>
+
+<section id="projects">
+    <h2>Project Ecosystem</h2>
+    <p class="section-desc">A comprehensive list of active systems, utility tools, and experimental architectures.</p>
+    
+    <div class="grid">
+        <div class="card">
+            <span class="tag">Flagship • Mobile</span>
+            <h3>PikaCycle Core</h3>
+            <p>Glassmorphic Android tracking suite built with Jetpack Compose for the anime-aesthetic community.</p>
+            <ul>
+                <li>Custom Material3 Theming</li>
+                <li>Real-time Data Persistence</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="tag">Security • Backend</span>
+            <h3>Grow With Deep</h3>
+            <p>Enterprise license management system with HWID verification and remote application control.</p>
+            <ul>
+                <li>Anti-Tamper Logic</li>
+                <li>Admin License Minting</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="tag">Infrastructure</span>
+            <h3>Cloud-Sentry API</h3>
+            <p>A lightweight monitoring middleware designed to track API health and latency across distributed Node.js clusters.</p>
+            <ul>
+                <li>Auto-Scaling Triggers</li>
+                <li>Latency Analytics</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="tag">Automation</span>
+            <h3>Meesho Listing Bot</h3>
+            <p>AI-driven automation for e-commerce inventory management and bulk listing synchronization.</p>
+            <ul>
+                <li>GPT-4o Data Parsing</li>
+                <li>Session Persistence</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="tag">Experimental • Web</span>
+            <h3>Nexus Virtual OS</h3>
+            <p>A web-based terminal interface mimicking a futuristic operating system for system monitoring.</p>
+            <ul>
+                <li>Three.js 3D Backgrounds</li>
+                <li>Custom Command Interpreter</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="tag">Utility • Finance</span>
+            <h3>CryptoLog Pro</h3>
+            <p>Local-first encrypted ledger for tracking digital assets and hardware wallet inventory.</p>
+            <ul>
+                <li>AES-256 Encryption</li>
+                <li>Offline Mode Sync</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="tag">AI • Research</span>
+            <h3>Vision-AI Node</h3>
+            <p>Experimental image processing module that generates optimized alt-text and metadata for SEO.</p>
+            <ul>
+                <li>Neural Network Integration</li>
+                <li>Bulk Asset Processing</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="tag">DevTools</span>
+            <h3>Synthetix CLI</h3>
+            <p>Command line interface for rapid scaffolding of Node.js and Express backend projects.</p>
+            <ul>
+                <li>Boilerplate Generation</li>
+                <li>Database Auto-Schema</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="tag">SaaS • Automation</span>
+            <h3>SocialSync Hub</h3>
+            <p>Omnichannel dashboard for scheduling and automating content across YouTube and Instagram.</p>
+            <ul>
+                <li>Automated Captioning</li>
+                <li>Multi-Channel Broadcast</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="status-grid">
+        <div class="status-item"><div class="dot"></div> Backend: Online</div>
+        <div class="status-item"><div class="dot"></div> API: Responsive</div>
+        <div class="status-item"><div class="dot"></div> AI Engine: Active</div>
+        <div class="status-item"><div class="dot"></div> Database: Secure</div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="card" style="text-align: center; border-color: var(--primary);">
+        <h2>Inquiries & Collaborations</h2>
+        <p>Available for high-performance system architecture and custom software builds.</p>
+        <p style="margin-top: 20px; font-size: 1.5rem; font-weight: 800; color: var(--primary);">upanshus27@gmail.com</p>
+        <p style="opacity: 0.5; font-size: 0.8rem;">Ujjain • Indore • Remote</p>
+    </div>
+</section>
+
+<footer>
+    <p><b>Upanshu Sharma</b> | AI-DS Engineering student at RGPV</p>
+    <p style="margin-top: 20px; font-size: 0.7rem; opacity: 0.3; letter-spacing: 2px;">CYBERYOUTUBER • EY9WARRIOR • ZORO</p>
+</footer>
+
+<script>
+const sections=document.querySelectorAll("section");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add("show");
+    });
+}, { threshold: 0.1 });
+sections.forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>
